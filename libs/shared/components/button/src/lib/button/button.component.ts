@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'cmp-button',
+  selector: 'button[cmp-button]',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })

@@ -1,4 +1,175 @@
 <router-outlet></router-outlet>
 <div>
-  <button cmp-button>Click Me</button>
+  <button cmp-button [size]="'l'" [disabled]="disabledButton()">
+    <i icon-start class="fa fa-search" aria-hidden="true"></i>
+    Click Me
+  </button>
+</div>
+<br />
+<div>
+  <button cmp-button [appearence]="'accent'" (click)="disabled()">
+    Disabled
+  </button>
+</div>
+
+<hr />
+
+<h2>Apparences Primary</h2>
+<div class="container">
+  <button cmp-button [size]="'l'">Large</button>
+  <button cmp-button>Medium</button>
+  <button cmp-button [size]="'s'">Small</button>
+  <button cmp-button [size]="'xs'">Extra Small</button>
+</div>
+
+<h2>Apparences Accent</h2>
+<div class="container">
+  <button cmp-button [appearence]="'accent'" [size]="'l'">Large</button>
+  <button cmp-button [appearence]="'accent'" [size]="'m'">Medium</button>
+  <button cmp-button [appearence]="'accent'" [size]="'s'">Small</button>
+  <button cmp-button [appearence]="'accent'" [size]="'xs'">Extra Small</button>
+</div>
+
+<h2>Apparences Secondary</h2>
+<div class="container">
+  <button cmp-button [appearence]="'secondary'" [size]="'l'">Large</button>
+  <button cmp-button [appearence]="'secondary'" [size]="'m'">Medium</button>
+  <button cmp-button [appearence]="'secondary'" [size]="'s'">Small</button>
+  <button cmp-button [appearence]="'secondary'" [size]="'xs'">
+    Extra Small
+  </button>
+</div>
+
+<h2>Apparences Destructive</h2>
+<div class="container">
+  <button cmp-button [appearence]="'destructive'" [size]="'l'">Large</button>
+  <button cmp-button [appearence]="'destructive'" [size]="'m'">Medium</button>
+  <button cmp-button [appearence]="'destructive'" [size]="'s'">Small</button>
+  <button cmp-button [appearence]="'destructive'" [size]="'xs'">
+    Extra Small
+  </button>
+</div>
+
+<h2>Apparences Flat</h2>
+<div class="container">
+  <button cmp-button [appearence]="'flat'" [size]="'l'">Large</button>
+  <button cmp-button [appearence]="'flat'" [size]="'m'">Medium</button>
+  <button cmp-button [appearence]="'flat'" [size]="'s'">Small</button>
+  <button cmp-button [appearence]="'flat'" [size]="'xs'">Extra Small</button>
+</div>
+
+<h2>Apparences Outline</h2>
+<div class="container">
+  <button cmp-button [appearence]="'outline'" [size]="'l'">Large</button>
+  <button cmp-button [appearence]="'outline'" [size]="'m'">Medium</button>
+  <button cmp-button [appearence]="'outline'" [size]="'s'">Small</button>
+  <button cmp-button [appearence]="'outline'" [size]="'xs'">Extra Small</button>
+</div>
+
+<h2>Icon Start</h2>
+<div class="container">
+  <button cmp-button [size]="'l'">
+    <i icon-start class="fa fa-search" aria-hidden="true"></i>Large
+  </button>
+  <button cmp-button [size]="'m'">
+    <i icon-start class="fa fa-search" aria-hidden="true"></i>Medium
+  </button>
+  <button cmp-button [size]="'s'">
+    <i icon-start class="fa fa-search" aria-hidden="true"></i>Small
+  </button>
+  <button cmp-button [size]="'xs'">
+    <i icon-start class="fa fa-search" aria-hidden="true"></i>Extra Small
+  </button>
+</div>
+
+<h2>Icon End</h2>
+<div class="container">
+  <button cmp-button [size]="'l'">
+    Large
+    <i icon-end class="fa fa-angle-down" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'m'">
+    Medium
+    <i icon-end class="fa fa-angle-down" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'s'">
+    Small
+    <i icon-end class="fa fa-angle-down" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'xs'">
+    Extra Small
+    <i icon-end class="fa fa-angle-down" aria-hidden="true"></i>
+  </button>
+</div>
+
+<h2>Only Icon</h2>
+<div class="container">
+  <button cmp-button [size]="'l'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'m'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'s'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [size]="'xs'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+</div>
+
+<h2>Only Icon Accent</h2>
+<div class="container">
+  <button cmp-button [appearence]="'accent'" [size]="'l'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'accent'" [size]="'m'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'accent'" [size]="'s'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'accent'" [size]="'xs'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+</div>
+
+<h2>Only Icon Secondary</h2>
+<div class="container">
+  <button cmp-button [appearence]="'secondary'" [size]="'l'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'secondary'" [size]="'m'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'secondary'" [size]="'s'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [appearence]="'secondary'" [size]="'xs'">
+    <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+  </button>
+</div>
+
+<h2>Only Icon Disabled</h2>
+<div class="container">
+  <button cmp-button [disabled]="true" [appearence]="'accent'" [size]="'l'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [disabled]="true" [appearence]="'accent'" [size]="'m'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [disabled]="true" [appearence]="'accent'" [size]="'s'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+  <button cmp-button [disabled]="true" [appearence]="'accent'" [size]="'xs'">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+</div>
+
+<h2>Disabled</h2>
+<div class="container">
+  <button cmp-button [disabled]="true" [size]="'l'">Large</button>
+  <button cmp-button [disabled]="true">Medium</button>
+  <button cmp-button [disabled]="true" [size]="'s'">Small</button>
+  <button cmp-button [disabled]="true" [size]="'xs'">Extra Small</button>
 </div>

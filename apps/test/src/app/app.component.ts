@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '@just-components/button';
 
@@ -11,4 +11,10 @@ import { ButtonComponent } from '@just-components/button';
 })
 export class AppComponent {
   title = 'test';
+
+  disabledButton = signal(false);
+
+  disabled() {
+    this.disabledButton.update((v) => !v);
+  }
 }

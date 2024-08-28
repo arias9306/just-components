@@ -1,4 +1,3 @@
-<router-outlet></router-outlet>
 <div>
   <button cmp-button [size]="'l'" [disabled]="disabledButton()">
     <i icon-start class="fa fa-search" aria-hidden="true"></i>
@@ -11,7 +10,17 @@
     Disabled
   </button>
 </div>
-
+<br />
+<div>
+  <button
+    cmp-button
+    [loading]="disabledButton()"
+    [appearence]="'accent'"
+    (click)="log()"
+  >
+    Execute
+  </button>
+</div>
 <hr />
 
 <h2>Apparences Primary</h2>

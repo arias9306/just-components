@@ -1,5 +1,4 @@
-button[cmp-button] {
-  color: white;
+.btn {
   appearance: none;
   border: 0;
   text-decoration: none;
@@ -107,7 +106,7 @@ button[cmp-button] {
     }
   }
 
-  &:disabled {
+  &:disabled:not(.loading) {
     background-color: gray;
     cursor: not-allowed;
 
@@ -115,4 +114,157 @@ button[cmp-button] {
       background-color: rgb(172, 168, 168);
     }
   }
+
+  &:disabled {
+    cursor: wait;
+  }
 }
+
+.loader {
+  position: absolute;
+  color: transparent;
+}
+
+.loading .loader {
+  color: initial;
+}
+
+.loading:not(.loader) {
+  color: transparent;
+}
+
+
+// // Define variables for colors, spacing, and typography
+// $primary-color: #526ed3;
+// $accent-color: rgb(190, 16, 39);
+// $secondary-background: #ffffff14;
+// $destructive-color: $accent-color;
+// $flat-color: $primary-color;
+// $outline-color: $primary-color;
+// $disabled-color: gray;
+// $disabled-hover: rgb(172, 168, 168);
+
+// $font-size-base: 16px;
+// $font-weight-bold: 700;
+// $border-radius: 8px;
+// $padding-horizontal: 20px;
+// $gap-size: 10px;
+
+// $transition-duration: 0.3s;
+// $transition-timing: ease-in-out;
+
+// // Mixin for transitions
+// @mixin transition($properties...) {
+//   transition-property: $properties;
+//   transition-duration: $transition-duration;
+//   transition-timing-function: $transition-timing;
+// }
+
+// // Mixin for button sizes
+// @mixin button-size($height, $font-size: $font-size-base) {
+//   height: $height;
+
+//   .button-label {
+//     font-size: $font-size;
+//   }
+// }
+
+// // Button base styles
+// .btn {
+//   appearance: none;
+//   border: 0;
+//   text-decoration: none;
+//   position: relative;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   box-sizing: border-box;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   vertical-align: middle;
+//   max-width: 100%;
+//   user-select: none;
+//   font-weight: $font-weight-bold;
+//   cursor: pointer;
+//   gap: $gap-size;
+//   border-radius: $border-radius;
+//   padding: 0 $padding-horizontal;
+
+//   @include transition(background-color, color, opacity);
+
+//   .button-label {
+//     font-size: $font-size-base;
+//   }
+
+//   // Button size variants
+//   &.extra-small {
+//     @include button-size(25px, 13px);
+//   }
+
+//   &.small {
+//     @include button-size(35px, 13px);
+//   }
+
+//   &.medium {
+//     @include button-size(40px);
+//   }
+
+//   &.large {
+//     @include button-size(45px);
+//   }
+
+//   // Appearance variants
+//   @each $type, $background in ("primary": $primary-color ,
+//     "accent": $accent-color,
+//     "secondary": $secondary-background,
+//     "destructive": $destructive-color,
+//     "flat": (transparent, lighten($secondary-background, 10%)),
+//     "outline": (transparent, lighten($secondary-background, 10%))) {
+//     &[data-appearence-type="#{$type}"] {
+//       background-color: $background;
+//       color: if($type =="flat" or $type =="outline", $outline-color, null);
+//       box-shadow: if($type =="outline", inset 0 0 0 1px #ffffff24, none);
+
+//       &:hover {
+//         background-color: lighten($primary-color, 10%);
+//       }
+//     }
+//   }
+
+//   //   &[data-appearence-type="secondary"] {
+//   //     color: #526ed3;
+//   //     background-color: #ffffff14;
+
+//   //     &:hover {
+//   //       background-color: #ffffff29;
+//   //     }
+//   //   }
+
+//   // Disabled state styles
+//   &:disabled:not(.loading) {
+//     background-color: $disabled-color;
+//     cursor: not-allowed;
+
+//     &:hover {
+//       background-color: $disabled-hover;
+//     }
+//   }
+
+//   &:disabled {
+//     cursor: wait;
+//   }
+// }
+
+// // Loader styles
+// .loader {
+//   position: absolute;
+//   color: transparent;
+// }
+
+// .loading .loader {
+//   color: initial;
+// }
+
+// .loading:not(.loader) {
+//   color: transparent;
+// }

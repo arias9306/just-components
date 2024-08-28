@@ -1,6 +1,6 @@
 /* eslint-disable @angular-eslint/no-host-metadata-property */
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, input, ViewEncapsulation } from '@angular/core';
 import { ButtonBaseDirective } from './button-base.directive';
 
 @Component({
@@ -9,8 +9,18 @@ import { ButtonBaseDirective } from './button-base.directive';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   hostDirectives: [
-    { directive: ButtonBaseDirective, inputs: ['appearence', 'size'] },
+    {
+      directive: ButtonBaseDirective,
+      inputs: ['appearence', 'size'],
+    },
   ],
   encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.btn]': 'true',
+    '[class.loading]': 'loading()',
+    '[disabled]': 'loading()',
+  },
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+  loading = input<boolean | null>(false);
+}

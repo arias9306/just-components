@@ -14,6 +14,7 @@ const SIZE_MAP: Record<string, string[]> = {
   host: {
     '[attr.data-appearence-type]': 'appearence()',
     '[class]': 'sizeClass()',
+    class: 'btn',
   },
   hostDirectives: [],
 })

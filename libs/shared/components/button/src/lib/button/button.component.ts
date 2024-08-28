@@ -6,7 +6,14 @@ import { ButtonBaseDirective } from './button-base.directive';
 @Component({
   selector: 'button[cmp-button]',
   standalone: true,
-  templateUrl: './button.component.html',
+  template: `
+    <ng-content select="[icon-start]"> </ng-content>
+    <span class="button-label"><ng-content> </ng-content></span>
+    <ng-content select="[icon-end]"> </ng-content>
+    @if (loading()) {
+    <i class="fa fa-spinner fa-spin fa-fw button-label loader"></i>
+    }
+  `,
   styleUrl: './button.component.scss',
   hostDirectives: [
     {
@@ -14,12 +21,10 @@ import { ButtonBaseDirective } from './button-base.directive';
       inputs: ['appearence', 'size'],
     },
   ],
-  encapsulation: ViewEncapsulation.None,
   host: {
-    '[class.btn]': 'true',
     '[class.loading]': 'loading()',
-    '[disabled]': 'loading()',
   },
+  encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent {
   loading = input<boolean | null>(false);

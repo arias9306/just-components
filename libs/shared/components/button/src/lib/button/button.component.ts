@@ -18,7 +18,7 @@ import { ButtonBaseDirective } from './button-base.directive';
   hostDirectives: [
     {
       directive: ButtonBaseDirective,
-      inputs: ['appearence', 'size'],
+      inputs: ['appearence', 'size', 'shape'],
     },
   ],
   host: {

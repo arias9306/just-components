@@ -7,3 +7,5 @@ export type ButtonAppearence =
   | 'outline';
 
 export type ButtonSize = 'xs' | 's' | 'm' | 'l';
+
+export type ButtonShape = 'circle' | 'rounded';

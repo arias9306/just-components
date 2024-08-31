@@ -1,20 +1,21 @@
 /* eslint-disable @angular-eslint/no-host-metadata-property */
 import { computed, Directive, input } from '@angular/core';
-import { ButtonAppearence, ButtonSize } from './button-types';
+import { ButtonAppearence, ButtonShape, ButtonSize } from './button-types';
 
 const SIZE_MAP: Record<string, string[]> = {
-  xs: ['extra-small'],
-  s: ['small'],
-  m: ['medium'],
-  l: ['large'],
+  xs: ['cmp-button--xs'],
+  s: ['cmp-button--s'],
+  m: ['cmp-button--m'],
+  l: ['cmp-button--l'],
 };
 
 @Directive({
   standalone: true,
   host: {
-    '[attr.data-appearence-type]': 'appearence()',
+    '[attr.data-appearance-type]': 'appearence()',
+    '[attr.data-shape]': 'shape()',
     '[class]': 'sizeClass()',
-    class: 'btn',
+    class: 'cmp-button',
   },
   hostDirectives: [],
 })
@@ -23,6 +24,7 @@ export class ButtonBaseDirective {
 
   appearence = input<ButtonAppearence>('primary');
   size = input<ButtonSize>('m');
+  shape = input<ButtonShape>('rounded');
 
   sizeClass = computed(() => {
     const sizeClass = SIZE_MAP[this.size()];

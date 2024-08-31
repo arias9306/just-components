@@ -87,6 +87,7 @@ $button-sizes: (
   cursor: pointer;
   gap: $gap-size;
   padding: 0 $padding-horizontal;
+  color: white;
 
   @include transitions;
 

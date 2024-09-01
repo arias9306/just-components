@@ -17,7 +17,10 @@
         "tsConfig": "apps/test/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/test/src/favicon.ico", "apps/test/src/assets"],
-        "styles": ["apps/test/src/styles.scss"],
+        "styles": [
+          "node_modules/font-awesome/css/font-awesome.min.css",
+          "apps/test/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

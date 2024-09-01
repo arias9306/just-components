@@ -147,9 +147,10 @@ $button-sizes: (
   &:disabled:not(.loading) {
     background-color: map.get($colors, "gray");
     cursor: not-allowed;
+    color: #c0c0c0;
 
     &:hover {
-      background-color: rgb(172, 168, 168);
+      background-color: #aca8a8;
     }
   }
 
@@ -164,7 +165,7 @@ $button-sizes: (
 }
 
 .loading .loader {
-  color: initial;
+  color: white;
 }
 
 .loading:not(.loader) {
